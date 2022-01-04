@@ -21,7 +21,7 @@ const liMaker = (text) => {
   
     liMaker(input.value)
     input.value = ''
-  })
+  });
 
   let itemsArray = []
 
@@ -29,4 +29,17 @@ const liMaker = (text) => {
   const data = JSON.parse(localStorage.getItem('items'))
 
 
-// console.log(form)
+data.forEach((item) => {
+  liMaker(item)
+});
+
+button.addEventListener('click', function (){
+  localStorage.clear()
+  while(ul.firstChild){
+    ul.removeChild(ul.firstChild)
+
+    
+  }
+});
+// console.log(localStorage)
+
